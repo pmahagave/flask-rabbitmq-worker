@@ -13,7 +13,7 @@ def get_db_connection():
 # ============ POST ENDPOINT ============
 @bp.route('/items', methods=['POST'])
 def create_item():
-    print("🔍 Request received!")
+    print("Request received!")
     
     try:
         data = request.get_json()
@@ -32,7 +32,7 @@ def create_item():
         )
         conn.commit()
         conn.close()
-        print(f"💾 Inserted: {item_name}")
+        print(f" Inserted: {item_name}")
         
         connection = pika.BlockingConnection(
             pika.ConnectionParameters(host=Config.RABBITMQ_HOST, port=Config.RABBITMQ_PORT)
