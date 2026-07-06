@@ -1,0 +1,72 @@
+{
+  "info": {
+    "name": "Flask-RabbitMQ-Celery API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Item",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"item\": \"book\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/items",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "items"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Concurrent Delay Request",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/api/delay?delay_value=1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "delay"],
+          "query": [
+            {
+              "key": "delay_value",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Test with Delay 2",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/api/delay?delay_value=2",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "delay"],
+          "query": [
+            {
+              "key": "delay_value",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
